@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.net.InetAddress;
 
 @RestController
 @ConfigurationProperties(prefix = "greeting")
@@ -23,13 +22,18 @@ public class GreeterRestController {
     @GetMapping(value = "/greeting", produces = "text/plain")
     public String greeting() {
 
-        String backendServiceUrl = String.format("http://%s:%d/api/backend?greeting={greeting}", backendServiceHost, backendServicePort);
+        try {
+            String backendServiceUrl = String.format("http://%s:%d/api/backend?greeting={greeting}", backendServiceHost, backendServicePort);
 
-        System.out.print("Sending to; " + backendServiceUrl);
+            System.out.print("Sending to; " + backendServiceUrl);
 
-        BackendDTO response = restTemplate.getForObject(backendServiceUrl, BackendDTO.class, saying);
+            BackendDTO response = restTemplate.getForObject(backendServiceUrl, BackendDTO.class, saying);
 
-        return response.getGreeting() + " at host: " + response.getIp();
+            return response.getGreeting() + " at host: " + response.getIp();
+
+        } catch (Exception e) {
+            return "error on calling backend Service";
+        }
     }
 
 
