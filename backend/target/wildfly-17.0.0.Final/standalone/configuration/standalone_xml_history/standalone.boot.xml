@@ -527,9 +527,4 @@
             <remote-destination host="localhost" port="25"/>
         </outbound-socket-binding>
     </socket-binding-group>
-    <deployments>
-        <deployment name="ROOT.war" runtime-name="ROOT.war">
-            <content sha1="35f511e68c48915a9f1139ff9941d5f62985e991"/>
-        </deployment>
-    </deployments>
 </server>
