@@ -13,6 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 public class GreeterRestControllerTest {
 
+    /*
     @Rule
     public ExpectedException exception = ExpectedException.none();
 
@@ -61,5 +62,6 @@ public class GreeterRestControllerTest {
 
 
     }
+    */
 
 }

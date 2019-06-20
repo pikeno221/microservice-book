@@ -529,7 +529,7 @@
     </socket-binding-group>
     <deployments>
         <deployment name="ROOT.war" runtime-name="ROOT.war">
-            <content sha1="dd4b5f93209d509f1e25ceb2fa842c17dabf8a2a"/>
+            <content sha1="2d37a1dda8c248108fcddfa909ca26ccb374b248"/>
         </deployment>
     </deployments>
 </server>
